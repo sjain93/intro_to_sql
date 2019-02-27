@@ -1,0 +1,101 @@
+1. intro_to_sql=# select * from robots where source = 'Star Wars';
+ name |  source   | personality | id
+------+-----------+-------------+----
+ C3PO | Star Wars | anxious     |  4
+ R2D2 | Star Wars | loyal       |  8
+
+ 2. intro_to_sql=# select * from robots where personality = 'anxious';
+ name |  source   | personality | id
+------+-----------+-------------+----
+ C3PO | Star Wars | anxious     |  4
+(1 row)
+
+3. intro_to_sql=# select name from recipes where nut_free=TRUE;
+                   name
+-------------------------------------------
+ Butternut Squash Bake
+ Vegetarian Bibimbap
+ French Veggie Loaf
+ Quinoa and Black Beans
+ Juicy Roasted Chicken
+ Garlic Green Beans
+ Stout Slow Cooker Corned Beef and Veggies
+(7 rows)
+
+4. intro_to_sql=# select count(name) from recipes where gluten_free=TRUE and vegetarian=FALSE;
+ count
+-------
+     2
+(1 row)
+
+5.intro_to_sql=# select max(number_of_legs) from animals;
+ max
+-----
+   8
+(1 row)
+intro_to_sql=# select name from animals where number_of_legs=8;
+  name
+---------
+ octopus
+(1 row)
+
+6. intro_to_sql=# select min(mins_to_play) from board_games;
+ min
+-----
+  15
+(1 row)
+intro_to_sql=# select name from board_games where mins_to_play=15;
+   name
+----------
+ Sushi Go
+ Quixo
+(2 rows)
+
+7.intro_to_sql=# select min(minutes_required) from recipes;
+ min
+-----
+  15
+(1 row)
+
+intro_to_sql=# select name from recipes where minutes_required=15;
+             name
+------------------------------
+ Vietnamese Rice-Noodle Salad
+(1 row)
+
+8.intro_to_sql=# select name from robots where name like 'M%';
+      name
+----------------
+ Marvin
+ Mr. Butlertron
+(2 rows)
+
+9. intro_to_sql=# select count(name) from board_games where max_players>=8;
+ count
+-------
+     3
+(1 row)
+
+10.intro_to_sql=# select name from animals where swimming=TRUE and egg_laying=TRUE;
+  name
+---------
+ octopus
+ duck
+(2 rows)
+
+11.intro_to_sql=# select name from animals where swimming=TRUE and egg_laying=TRUE and flying=FALSE;
+  name
+---------
+ octopus
+(1 row)
+12.intro_to_sql=# select max(max_players) from board_games;
+ max
+-----
+  30
+(1 row)
+
+intro_to_sql=# select name from board_games where max_players=30;
+          name
+------------------------
+ Cards Against Humanity
+(1 row)
